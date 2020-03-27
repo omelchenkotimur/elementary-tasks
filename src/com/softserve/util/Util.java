@@ -18,6 +18,7 @@ public class Util {
                 shouldContinue = false;
             } catch (InputMismatchException exception) {
                 System.out.println("False input. Enter positive number.");
+                scanner.nextLine();
             }
         }
         return input;
