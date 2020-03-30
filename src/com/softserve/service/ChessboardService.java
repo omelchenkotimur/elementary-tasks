@@ -2,14 +2,21 @@ package com.softserve.service;
 
 import com.softserve.model.Chessboard;
 
-public class ChessboardBuilder {
+/**
+ * Service, that contains methods, which uses to work with chessboard.
+ */
+public class ChessboardService {
 
     private Chessboard board;
 
-    public ChessboardBuilder(Chessboard chessboard) {
+    public ChessboardService(Chessboard chessboard) {
         this.board = chessboard;
     }
 
+    /**
+     * Method, that uses to build a chessboard.
+     * @return StringBuilder object, that contains built board.
+     */
     public StringBuilder build() {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < this.getChessboard().getLength(); i++) {
