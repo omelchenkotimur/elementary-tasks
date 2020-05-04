@@ -1,8 +1,7 @@
 package com.softserve.model;
 
-import com.softserve.util.Util;
-
-import java.util.Collections;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Triangle implements Comparable<Triangle> {
 
@@ -17,8 +16,12 @@ public class Triangle implements Comparable<Triangle> {
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
-        this.square = Util.calculateGeroneSquare(sideA,sideB,sideC);
+
+        double p = (sideA + sideB + sideC) / 2;
+        double square = Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
+        this.square = new BigDecimal(square).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
+
 
     public double getSquare() {
         return square;
@@ -70,4 +73,3 @@ public class Triangle implements Comparable<Triangle> {
         return Double.compare(this.square, triangle.square);
     }
 }
-
