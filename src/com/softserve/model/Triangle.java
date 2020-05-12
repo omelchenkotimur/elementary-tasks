@@ -1,7 +1,10 @@
 package com.softserve.model;
 
+import com.softserve.service.TriangleService;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Objects;
 
 public class Triangle implements Comparable<Triangle> {
 
@@ -18,8 +21,7 @@ public class Triangle implements Comparable<Triangle> {
         this.sideC = sideC;
 
         double p = (sideA + sideB + sideC) / 2;
-        double square = Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
-        this.square = new BigDecimal(square).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        this.square = new BigDecimal(Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC))).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
 
@@ -71,5 +73,21 @@ public class Triangle implements Comparable<Triangle> {
     @Override
     public int compareTo(Triangle triangle) {
         return Double.compare(this.square, triangle.square);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Double.compare(triangle.sideA, sideA) == 0 &&
+                Double.compare(triangle.sideB, sideB) == 0 &&
+                Double.compare(triangle.sideC, sideC) == 0 &&
+                name.equals(triangle.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, sideA, sideB, sideC);
     }
 }

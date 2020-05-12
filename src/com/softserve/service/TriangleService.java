@@ -6,10 +6,10 @@ import java.util.InputMismatchException;
 
 public class TriangleService {
 
-    public Triangle getTriangleFromInput(String value) throws InputMismatchException, IllegalArgumentException {
+    public Triangle getTriangleFromInput(String value) throws InputMismatchException {
         String[] splitted = value.split(",");
         if (splitted.length != 4) {
-            return null;//проброс ошибки в хендлер
+            throw new InputMismatchException("Incorrect input.");
         }
 
         String name = splitted[0].trim();
@@ -21,11 +21,13 @@ public class TriangleService {
         sideB = Double.parseDouble(splitted[2].trim());
         sideC = Double.parseDouble(splitted[3].trim());
 
-        Triangle triangle = new Triangle(name, sideA, sideB, sideC);
-        if (Double.isNaN(triangle.getSquare())) {
-            System.out.println("Triangle sides mismatch.");
-            return null;
+        Triangle triangle;
+        try {
+            triangle = new Triangle(name, sideA, sideB, sideC);
+        }catch (NumberFormatException unused){
+            throw new InputMismatchException("Triangle with such sides cannot be built.");
         }
+//как называется неиспользуемая ошибка
         return triangle;
     }
 }

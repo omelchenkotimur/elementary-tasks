@@ -13,13 +13,13 @@ public class ChessboardServiceTest {
     private static ChessboardService chessboardService;
 
     @BeforeAll
-    public static void initialization(){
+    static void initialization() {
         chessboardService = new ChessboardService();
         System.out.println("ChessboardService test start");
     }
 
     @Test
-    public void testBuild() {
+    void testBuild() {
         Chessboard chessboard = new Chessboard(3, 3, "X");
         chessboardService.setChessboard(chessboard);
         String actualBoard = chessboardService.build().toString();
@@ -28,7 +28,7 @@ public class ChessboardServiceTest {
     }
 
     @AfterAll
-    public static void onComplete() {
+    static void onComplete() {
         System.out.println("Testing successfully completed");
     }
 }
