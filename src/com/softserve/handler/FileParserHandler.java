@@ -25,7 +25,7 @@ public class FileParserHandler {
             try {
                 System.out.println(fileParserService.findStringAndCount(stringToFind));
             } catch (NullPointerException unhandled) {
-
+//message "не нашел"
             }
         } else if (input == 2) {
             System.out.println("Enter filepath.");

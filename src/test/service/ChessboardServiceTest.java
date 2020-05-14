@@ -23,7 +23,7 @@ public class ChessboardServiceTest {
         Chessboard chessboard = new Chessboard(3, 3, "X");
         chessboardService.setChessboard(chessboard);
         String actualBoard = chessboardService.build().toString();
-        String expectedBoard = new StringBuilder("X X\n X \nX X").toString();
+        String expectedBoard = "X X\n X \nX X";
         assertEquals("Fail to build chessboard", expectedBoard, actualBoard);
     }
 
