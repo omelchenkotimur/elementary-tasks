@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.*;
 
-public class ChessboardServiceTest {
+class ChessboardServiceTest {
 
     private static ChessboardService chessboardService;
 
@@ -20,10 +20,11 @@ public class ChessboardServiceTest {
 
     @Test
     void testBuild() {
+        String expectedBoard = "X X\n X \nX X";
         Chessboard chessboard = new Chessboard(3, 3, "X");
         chessboardService.setChessboard(chessboard);
         String actualBoard = chessboardService.build().toString();
-        String expectedBoard = "X X\n X \nX X";
+
         assertEquals("Fail to build chessboard", expectedBoard, actualBoard);
     }
 

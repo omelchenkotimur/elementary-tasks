@@ -40,7 +40,7 @@ class FileParserServiceTest {
     void testFindStringAndCount() {
         int expectedCounter = 2;
         int actualCounter = fileParserService.findStringAndCount(STRING_TO_SEARCH);
-        assertEquals("Counter error!", expectedCounter, actualCounter);
+        assertEquals("Fail to count strings!", expectedCounter, actualCounter);
     }
 
     @Test
@@ -49,7 +49,7 @@ class FileParserServiceTest {
         String replace = "b";
         fileParserService.findStringAndReplace(STRING_TO_SEARCH, replace);
         String actualResult = Util.readFileIntoString(FILE_PATH);
-        assertEquals("Replace error!", expectedResult, actualResult);
+        assertEquals("Fail to replace strings!", expectedResult, actualResult);
     }
 
     @AfterAll
