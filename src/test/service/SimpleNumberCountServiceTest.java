@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class SimpleNumberCountServiceTest {
+class SimpleNumberCountServiceTest {
 
     private static SimpleNumberCountService simpleNumberCountService;
 
@@ -22,10 +22,10 @@ public class SimpleNumberCountServiceTest {
     }
 
     @Test
-    void testSimpleNumberCountWhichSquareLessThenInput(){
+    void testSimpleNumberCountWhichSquareLessThenInput() {
         List<Integer> expectedResult = Arrays.asList(2, 3, 5, 7);
         ArrayList actualResult = simpleNumberCountService.simpleNumberCountWhichSquareLessThenInput(100);
-        assertEquals("Fail to count simple numbers!",expectedResult,actualResult);
+        assertEquals("Fail to count simple numbers!", expectedResult, actualResult);
     }
 
     @AfterAll
