@@ -12,6 +12,6 @@ public class SimpleNumberCountHandler {
         System.out.println("Enter the top value of counting.");
         int topValue = Util.getPositiveInt();
         System.out.println("The simple numbers which square is less then your input are:");
-        System.out.println(simpleNumberCountService.simpleNumberCount(topValue));
+        System.out.println(simpleNumberCountService.simpleNumberCountWhichSquareLessThenInput(topValue));
     }
 }
