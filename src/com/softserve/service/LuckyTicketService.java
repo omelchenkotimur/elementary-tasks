@@ -29,9 +29,9 @@ public class LuckyTicketService {
         return result;
     }
 
-    public StringBuilder format(int value, int lendth) {
+    private StringBuilder format(int value, int length) {
         StringBuilder result = new StringBuilder("0000000000").append(value);
-        result = new StringBuilder(result.substring(result.length() - lendth));
+        result = new StringBuilder(result.substring(result.length() - length));
         return result;
     }
 
@@ -70,4 +70,5 @@ public class LuckyTicketService {
         }
         return result;
     }
+
 }
