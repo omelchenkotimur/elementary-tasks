@@ -14,7 +14,7 @@ class FastExponentiationServiceTest {
     @BeforeAll
     static void initialization() {
         fastExponentiationService = new FastExponentiationService();
-        System.out.println("FastExponentiationService test start");
+        System.out.println("FastExponentiationService test started");
     }
 
     @Test
@@ -26,6 +26,6 @@ class FastExponentiationServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed");
+        System.out.println("Testing successfully completed\n");
     }
 }

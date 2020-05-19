@@ -15,7 +15,7 @@ class ChessboardServiceTest {
     @BeforeAll
     static void initialization() {
         chessboardService = new ChessboardService();
-        System.out.println("ChessboardService test start");
+        System.out.println("ChessboardService test started");
     }
 
     @Test
@@ -30,6 +30,6 @@ class ChessboardServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed");
+        System.out.println("Testing successfully completed.\n");
     }
 }

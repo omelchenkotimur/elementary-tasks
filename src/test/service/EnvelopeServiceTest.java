@@ -15,7 +15,7 @@ class EnvelopeServiceTest {
     @BeforeAll
     static void initialization() {
         envelopeService = new EnvelopeService();
-        System.out.println("EnvelopeService test start.");
+        System.out.println("EnvelopeService test started.");
     }
 
     @Test
@@ -47,6 +47,6 @@ class EnvelopeServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed.");
+        System.out.println("Testing successfully completed.\n");
     }
 }

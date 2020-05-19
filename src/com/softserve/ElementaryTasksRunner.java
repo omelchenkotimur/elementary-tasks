@@ -25,7 +25,7 @@ public class ElementaryTasksRunner {
                     "5. Number in words.\n" +
                     "6. Lucky Ticket.\n" +
                     "7. Simple Number Count.\n" +
-                    "8. Fibonachi numbers from range.\n" +
+                    "8. Fibonacci numbers from range.\n" +
                     "9. Fast Exponentiation.\n" +
                     "0. Exit.");
             try {
@@ -111,12 +111,12 @@ public class ElementaryTasksRunner {
                 }
                 break;
             case 8:
-                System.out.println("You choose Fibonachi Numbers from range task.");
-                FibonachiNumbersHandler fibonachiNumbersHandler = new FibonachiNumbersHandler();
-                boolean shouldContinueFibonachiNumbersTask = true;
-                while (shouldContinueFibonachiNumbersTask) {
-                    fibonachiNumbersHandler.handle();
-                    shouldContinueFibonachiNumbersTask = Util.confirmation("Enter new range? Yes/No");
+                System.out.println("You choose Fibonacci Numbers from range task.");
+                FibonacciNumbersHandler fibonacciNumbersHandler = new FibonacciNumbersHandler();
+                boolean shouldContinueFibonacciNumbersTask = true;
+                while (shouldContinueFibonacciNumbersTask) {
+                    fibonacciNumbersHandler.handle();
+                    shouldContinueFibonacciNumbersTask = Util.confirmation("Enter new range? Yes/No");
                 }
                 break;
             case 9:

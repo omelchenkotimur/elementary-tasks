@@ -14,7 +14,7 @@ class NumberInWordsServiceTest {
     @BeforeAll
     static void initialization() {
         numberInWordsService = new NumberInWordsService();
-        System.out.println("NumberInWords test start");
+        System.out.println("NumberInWords test started");
     }
 
     @Test
@@ -26,6 +26,6 @@ class NumberInWordsServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed");
+        System.out.println("Testing successfully completed\n");
     }
 }

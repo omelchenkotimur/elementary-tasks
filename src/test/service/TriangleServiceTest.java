@@ -18,7 +18,7 @@ class TriangleServiceTest {
     @BeforeAll
     static void initialization() {
         triangleService = new TriangleService();
-        System.out.println("TriangleService test start");
+        System.out.println("TriangleService test started");
     }
 
     @Test
@@ -43,6 +43,6 @@ class TriangleServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed");
+        System.out.println("Testing successfully completed\n");
     }
 }

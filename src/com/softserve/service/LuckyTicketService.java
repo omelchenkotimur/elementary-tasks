@@ -23,14 +23,17 @@ public class LuckyTicketService {
                     result++;
                 }
             } else {
-                throw new IllegalArgumentException("Unknown ticket type.");
+                throw new IllegalArgumentException("Unknown ticket type!");
             }
         }
         return result;
     }
 
-    private StringBuilder format(int value, int length) {
-        StringBuilder result = new StringBuilder("0000000000").append(value);
+    private StringBuilder format(int value, int length) throws IllegalArgumentException {
+        if (length > 8){
+            throw new IllegalArgumentException("Ticket number must be less then 8 digits!");
+        }
+        StringBuilder result = new StringBuilder("00000000").append(value);
         result = new StringBuilder(result.substring(result.length() - length));
         return result;
     }

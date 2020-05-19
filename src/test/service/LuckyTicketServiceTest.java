@@ -15,7 +15,7 @@ class LuckyTicketServiceTest {
     @BeforeAll
     static void initialization() {
         luckyTicketService = new LuckyTicketService();
-        System.out.println("LuckyTicketService test start");
+        System.out.println("LuckyTicketService test started");
     }
 
     @Test
@@ -33,9 +33,21 @@ class LuckyTicketServiceTest {
     }
 
     @Test
-    void testCount() {
+    void testCountThrowsIllegalArgumentExceptionWhenTypeIsInvalid() {
         Assertions.assertThrows(IllegalArgumentException.class, () ->
                 luckyTicketService.count(999999, "test"));
+    }
+
+    @Test
+    void testCountThrowsIllegalArgumentExceptionWhenValueIsOddNumber() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                luckyTicketService.count(9999999, "moscow"));
+    }
+
+    @Test
+    void testCountThrowsIllegalArgumentExceptionWhenValueBiggerThenEightDigits() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                luckyTicketService.count(1234567890, "moscow"));
     }
 
     @Test
@@ -47,6 +59,6 @@ class LuckyTicketServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed");
+        System.out.println("Testing successfully completed\n");
     }
 }
