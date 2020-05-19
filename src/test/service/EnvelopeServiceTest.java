@@ -15,7 +15,7 @@ class EnvelopeServiceTest {
     @BeforeAll
     static void initialization() {
         envelopeService = new EnvelopeService();
-        System.out.println("EnvelopeService test start");
+        System.out.println("EnvelopeService test start.");
     }
 
     @Test
@@ -24,7 +24,7 @@ class EnvelopeServiceTest {
         Envelope envelopeFirst = new Envelope(1.0, 1.0);
         Envelope envelopeSecond = new Envelope(2.0, 2.0);
         int actualResult = envelopeService.compare(envelopeFirst, envelopeSecond);
-        assertEquals("Fail to compare triangles", expectedResult, actualResult);
+        assertEquals("Fail to compare triangles!", expectedResult, actualResult);
     }
 
     @Test
@@ -33,7 +33,7 @@ class EnvelopeServiceTest {
         Envelope envelopeFirst = new Envelope(2.0, 2.0);
         Envelope envelopeSecond = new Envelope(1.0, 1.0);
         int actualResult = envelopeService.compare(envelopeFirst, envelopeSecond);
-        assertEquals("Fail to compare triangles", expectedResult, actualResult);
+        assertEquals("Fail to compare triangles!", expectedResult, actualResult);
     }
 
     @Test
@@ -42,11 +42,11 @@ class EnvelopeServiceTest {
         Envelope envelopeFirst = new Envelope(1.0, 2.0);
         Envelope envelopeSecond = new Envelope(2.0, 1.0);
         int actualResult = envelopeService.compare(envelopeFirst, envelopeSecond);
-        assertEquals("Fail to compare triangles", expectedResult, actualResult);
+        assertEquals("Fail to compare triangles!", expectedResult, actualResult);
     }
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed");
+        System.out.println("Testing successfully completed.");
     }
 }
