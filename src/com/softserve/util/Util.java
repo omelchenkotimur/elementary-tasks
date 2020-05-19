@@ -8,10 +8,12 @@ import java.nio.file.Paths;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//написать метод реализующий вайл луп
+
 public class Util {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static int getPositiveInt() {
+    public static int getPositiveInt() throws InputMismatchException {
         int input = 0;
         boolean shouldContinue = true;
         while (shouldContinue) {
@@ -28,6 +30,7 @@ public class Util {
         }
         return input;
     }
+
 
     public static String getOneCharString() {
         String input = null;
@@ -134,22 +137,6 @@ public class Util {
             }
         }
         return input;
-    }
-
-    public static boolean checkSimple(int number) {
-        if (number <= 1)
-            return false;
-        else if (number <= 3)
-            return true;
-        else if (number % 2 == 0 || number % 3 == 0)
-            return false;
-        int n = 5;
-        while (n * n <= number) {
-            if (number % n == 0 || number % (n + 2) == 0)
-                return false;
-            n = n + 6;
-        }
-        return true;
     }
 }
 

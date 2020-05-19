@@ -1,5 +1,7 @@
 package com.softserve.service;
 
+//валидация ввода параметров метода
+
 public class FastExponentiationService {
     public long binaryPower(int number, int power) {
         if (power == 0) {
