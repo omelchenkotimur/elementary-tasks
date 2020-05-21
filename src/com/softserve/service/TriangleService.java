@@ -25,9 +25,8 @@ public class TriangleService {
         try {
             triangle = new Triangle(name, sideA, sideB, sideC);
         }catch (NumberFormatException unused){
-            throw new InputMismatchException("Triangle with such sides cannot be built.");
+            throw new InputMismatchException("Triangle with such sides cannot be built!");
         }
-//как называется неиспользуемая ошибка
         return triangle;
     }
 }

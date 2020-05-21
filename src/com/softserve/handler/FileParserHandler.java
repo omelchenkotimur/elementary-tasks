@@ -25,7 +25,7 @@ public class FileParserHandler {
             try {
                 System.out.println(fileParserService.findStringAndCount(stringToFind));
             } catch (NullPointerException unhandled) {
-//message "не нашел"
+                throw new NullPointerException("File not found!");
             }
         } else if (input == 2) {
             System.out.println("Enter filepath.");
@@ -38,7 +38,7 @@ public class FileParserHandler {
                 fileParserService.findStringAndReplace(stringToFind, stringReplaceTo);
                 System.out.println(Util.readFileIntoString(fileParserService.getFilePath()));
             } catch (NullPointerException unhandled) {
-
+                throw new NullPointerException("File not found!");
             }
         } else {
             System.out.println("Incorrect input.");

@@ -2,6 +2,7 @@ package test.service;
 
 import com.softserve.service.NumberInWordsService;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +23,12 @@ class NumberInWordsServiceTest {
         String expectedResult = "one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine";
         String actualResult = numberInWordsService.numberInWords(123456789);
         assertEquals("Fail to get number in words!", expectedResult, actualResult);
+    }
+
+    @Test
+    void testNumberInWordsWhenInputBiggerThenBillion(){
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                numberInWordsService.numberInWords(999999999+1));
     }
 
     @AfterAll

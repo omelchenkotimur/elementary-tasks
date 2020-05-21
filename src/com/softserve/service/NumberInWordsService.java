@@ -2,7 +2,8 @@ package com.softserve.service;
 
 public class NumberInWordsService {
 
-    public String numberInWords(int number) {
+    public String numberInWords(int number) throws IllegalArgumentException {
+        validateMaxValue(number);
         String words = "";
         String[] unitsArray = {"zero", "one", "two", "three", "four", "five", "six",
                 "seven", "eight", "nine", "ten", "eleven", "twelve",
@@ -45,5 +46,11 @@ public class NumberInWordsService {
             }
         }
         return words;
+    }
+
+    private void validateMaxValue (int number){
+        if (number>999999999){
+            throw new IllegalArgumentException("Input number must be less then billion!");
+        }
     }
 }

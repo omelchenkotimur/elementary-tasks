@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 
 class FileParserServiceTest {
 
-    private static final String FILE_PATH = "C:\\Development\\elementary-tasks\\src\\test\\service\\resources\\test";
+    private static final String FILE_PATH = "C:\\Development\\elementary-tasks\\src\\test\\resources\\test";
     private static final String STRING_TO_SEARCH = "a";
     private static FileParserService fileParserService;
 

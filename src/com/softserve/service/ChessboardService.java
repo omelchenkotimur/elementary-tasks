@@ -16,7 +16,6 @@ public class ChessboardService {
         this.board = chessboard;
     }
 
-
     /**
      * Method, that uses to build a chessboard.
      *
