@@ -2,6 +2,7 @@ package test.service;
 
 import com.softserve.service.FastExponentiationService;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -18,10 +19,22 @@ class FastExponentiationServiceTest {
     }
 
     @Test
-    void testFastExponentiationService(){
+    void testFastExponentiationService() {
         long expectedResult = 8;
-        long actualResult = fastExponentiationService.binaryPower(2,3);
+        long actualResult = fastExponentiationService.binaryPower(2, 3);
         assertEquals("Fail to raise a number to a power!", expectedResult, actualResult);
+    }
+
+    @Test
+    void testFastExponentiationServiceWhenNumberLessZero() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                fastExponentiationService.binaryPower(-2, 2));
+    }
+
+    @Test
+    void testFastExponentiationServiceWhenPowerLessZero() {
+        Assertions.assertThrows(IllegalArgumentException.class, () ->
+                fastExponentiationService.binaryPower(2, -2));
     }
 
     @AfterAll
