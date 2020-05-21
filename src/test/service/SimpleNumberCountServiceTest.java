@@ -18,7 +18,7 @@ class SimpleNumberCountServiceTest {
     @BeforeAll
     static void initialization() {
         simpleNumberCountService = new SimpleNumberCountService();
-        System.out.println("SimpleNumberCountService test started");
+        System.out.println("SimpleNumberCountService test started.");
     }
 
     @Test
@@ -36,6 +36,6 @@ class SimpleNumberCountServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed\n");
+        System.out.println("Testing successfully completed.\n");
     }
 }

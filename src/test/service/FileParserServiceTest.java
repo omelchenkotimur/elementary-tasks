@@ -21,7 +21,7 @@ class FileParserServiceTest {
     static void initialization() {
         fileParserService = new FileParserService();
         fileParserService.setFilePath(FILE_PATH);
-        System.out.println("FileParserService test started");
+        System.out.println("FileParserService test started.");
 
     }
 
@@ -54,6 +54,6 @@ class FileParserServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed\n");
+        System.out.println("Testing successfully completed.\n");
     }
 }

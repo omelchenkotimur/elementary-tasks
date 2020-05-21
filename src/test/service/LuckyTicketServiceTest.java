@@ -15,7 +15,7 @@ class LuckyTicketServiceTest {
     @BeforeAll
     static void initialization() {
         luckyTicketService = new LuckyTicketService();
-        System.out.println("LuckyTicketService test started");
+        System.out.println("LuckyTicketService test started.");
     }
 
     @Test
@@ -59,6 +59,6 @@ class LuckyTicketServiceTest {
 
     @AfterAll
     static void onComplete() {
-        System.out.println("Testing successfully completed\n");
+        System.out.println("Testing successfully completed.\n");
     }
 }

@@ -15,7 +15,7 @@ class ChessboardServiceTest {
     @BeforeAll
     static void initialization() {
         chessboardService = new ChessboardService();
-        System.out.println("ChessboardService test started");
+        System.out.println("ChessboardService test started.");
     }
 
     @Test
