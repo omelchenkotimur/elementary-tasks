@@ -2,18 +2,18 @@ package com.softserve.handler;
 
 import com.softserve.model.Envelope;
 import com.softserve.service.EnvelopeService;
-import com.softserve.util.Util;
+import com.softserve.util.ConsoleUtilties;
 
 public class EnvelopeHandler {
     public void handle (){
         System.out.println("Enter first envelope length.");
-        double firstEnvelopeLength = Util.getPositiveDouble();
+        double firstEnvelopeLength = ConsoleUtilties.getPositiveDouble();
         System.out.println("Enter first envelope width.");
-        double firstEnvelopeWidth = Util.getPositiveDouble();
+        double firstEnvelopeWidth = ConsoleUtilties.getPositiveDouble();
         System.out.println("Enter second envelope length.");
-        double secondEnvelopeLength = Util.getPositiveDouble();
+        double secondEnvelopeLength = ConsoleUtilties.getPositiveDouble();
         System.out.println("Enter second envelope width.");
-        double secondEnvelopeWidth = Util.getPositiveDouble();
+        double secondEnvelopeWidth = ConsoleUtilties.getPositiveDouble();
         Envelope firstEnvelope = new Envelope(firstEnvelopeLength, firstEnvelopeWidth);
         Envelope secondEnvelope = new Envelope(secondEnvelopeLength, secondEnvelopeWidth);
         EnvelopeService envelopeService = new EnvelopeService();

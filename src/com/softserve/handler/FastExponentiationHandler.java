@@ -1,17 +1,17 @@
 package com.softserve.handler;
 
 import com.softserve.service.FastExponentiationService;
-import com.softserve.util.Util;
+import com.softserve.util.ConsoleUtilties;
 
 public class FastExponentiationHandler {
 
-    FastExponentiationService fastExponentiationService = new FastExponentiationService();
+    private FastExponentiationService fastExponentiationService = new FastExponentiationService();
 
     public void handle() {
         System.out.println("Enter the number");
-        int number = Util.getPositiveInt();
+        int number = ConsoleUtilties.getPositiveInt();
         System.out.println("Enter the the power value");
-        int power = Util.getPositiveInt();
+        int power = ConsoleUtilties.getPositiveInt();
         long time = System.currentTimeMillis();
         long result = fastExponentiationService.binaryPower(number, power);
         System.out.println("Exponentiation time is " + (double) (System.currentTimeMillis() - time) + "ms.");

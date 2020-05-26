@@ -1,7 +1,7 @@
 package test.service;
 
 import com.softserve.service.FileParserService;
-import com.softserve.util.Util;
+import com.softserve.util.FileProcessingUtilities;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;
@@ -48,7 +48,7 @@ class FileParserServiceTest {
         String expectedResult = "Abb Bbb Ccc";
         String replace = "b";
         fileParserService.findStringAndReplace(STRING_TO_SEARCH, replace);
-        String actualResult = Util.readFileIntoString(FILE_PATH);
+        String actualResult = FileProcessingUtilities.readFileIntoString(FILE_PATH);
         assertEquals("Fail to replace strings!", expectedResult, actualResult);
     }
 

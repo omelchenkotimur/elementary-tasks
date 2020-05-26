@@ -1,7 +1,8 @@
 package com.softserve.handler;
 
 import com.softserve.service.FileParserService;
-import com.softserve.util.Util;
+import com.softserve.util.ConsoleUtilties;
+import com.softserve.util.FileProcessingUtilities;
 
 public class FileParserHandler {
 
@@ -16,12 +17,12 @@ public class FileParserHandler {
         System.out.println("Choose the task mode:\n" +
                 "1. Count number of strings in the text.\n" +
                 "2. Found and replace strings in the text.");
-        int input = Util.getPositiveInt();
+        int input = ConsoleUtilties.getPositiveInt();
         if (input == 1) {
             System.out.println("Enter filepath.");
-            fileParserService.setFilePath(Util.getString());
+            fileParserService.setFilePath(ConsoleUtilties.getString());
             System.out.println("Enter string to find.");
-            String stringToFind = Util.getString();
+            String stringToFind = ConsoleUtilties.getString();
             try {
                 System.out.println(fileParserService.findStringAndCount(stringToFind));
             } catch (NullPointerException unhandled) {
@@ -29,14 +30,14 @@ public class FileParserHandler {
             }
         } else if (input == 2) {
             System.out.println("Enter filepath.");
-            fileParserService.setFilePath(Util.getString());
+            fileParserService.setFilePath(ConsoleUtilties.getString());
             System.out.println("Enter string to find.");
-            String stringToFind = Util.getString();
+            String stringToFind = ConsoleUtilties.getString();
             System.out.println("Enter string to replace.");
-            String stringReplaceTo = Util.getString();
+            String stringReplaceTo = ConsoleUtilties.getString();
             try {
                 fileParserService.findStringAndReplace(stringToFind, stringReplaceTo);
-                System.out.println(Util.readFileIntoString(fileParserService.getFilePath()));
+                System.out.println(FileProcessingUtilities.readFileIntoString(fileParserService.getFilePath()));
             } catch (NullPointerException unhandled) {
                 throw new NullPointerException("File not found!");
             }

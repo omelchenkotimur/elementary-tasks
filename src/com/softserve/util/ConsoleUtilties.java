@@ -1,16 +1,9 @@
 package com.softserve.util;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.InvalidPathException;
-import java.nio.file.Paths;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-//написать метод реализующий вайл луп
-
-public class Util {
+public class ConsoleUtilties {
     private static Scanner scanner = new Scanner(System.in);
 
     public static int getPositiveInt() throws InputMismatchException {
@@ -31,7 +24,6 @@ public class Util {
         return input;
     }
 
-
     public static String getOneCharString() {
         String input = null;
         boolean shouldContinue = true;
@@ -43,29 +35,6 @@ public class Util {
             System.out.println("False input. Enter one character");
         }
         return input;
-    }
-
-    public static boolean confirmation(String message) {
-        System.out.println(message);
-        String input;
-        boolean result = false;
-        boolean shouldContinue = true;
-        while (shouldContinue) {
-            input = scanner.nextLine();
-            if (input.equals("")) {
-                input = scanner.nextLine();
-            }
-            input = input.toLowerCase();
-            if (input.equals("yes") || input.equals("y")) {
-                result = true;
-                shouldContinue = false;
-            } else if (input.equals("no") || input.equals("n")) {
-                shouldContinue = false;
-            } else {
-                System.out.println("Incorrect input.");
-            }
-        }
-        return result;
     }
 
     public static double getPositiveDouble() {
@@ -99,28 +68,6 @@ public class Util {
         return input;
     }
 
-    public static String readFileIntoString(String filePath) {
-        String result = null;
-        try {
-            result = new String(Files.readAllBytes(Paths.get(filePath)), StandardCharsets.UTF_8);
-        } catch (InvalidPathException pathException) {
-            System.out.println("Invalid path.");
-        } catch (IOException ioException) {
-            System.out.println("File not found.");
-        }
-        return result;
-    }
-
-    public static void updateFileWithString(String filePath, String value) {
-        try {
-            Files.write(Paths.get(filePath), value.getBytes());
-        } catch (InvalidPathException pathException) {
-            System.out.println("Invalid path.");
-        } catch (IOException ioException) {
-            System.out.println("File not found.");
-        }
-    }
-
     public static int getIntLessBillion() {
         int input = 0;
         boolean shouldContinue = true;
@@ -138,6 +85,27 @@ public class Util {
         }
         return input;
     }
+
+    public static boolean confirmation(String message) {
+        System.out.println(message);
+        String input;
+        boolean result = false;
+        boolean shouldContinue = true;
+        while (shouldContinue) {
+            input = scanner.nextLine();
+            if (input.equals("")) {
+                input = scanner.nextLine();
+            }
+            input = input.toLowerCase();
+            if (input.equals("yes") || input.equals("y")) {
+                result = true;
+                shouldContinue = false;
+            } else if (input.equals("no") || input.equals("n")) {
+                shouldContinue = false;
+            } else {
+                System.out.println("Incorrect input.");
+            }
+        }
+        return result;
+    }
 }
-
-

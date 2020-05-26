@@ -2,7 +2,7 @@ package com.softserve.handler;
 
 import com.softserve.model.Triangle;
 import com.softserve.service.TriangleService;
-import com.softserve.util.Util;
+import com.softserve.util.ConsoleUtilties;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,14 +18,14 @@ public class TriangleHandler {
         boolean shouldContinueTriangleInput = true;
         while (shouldContinueTriangleInput) {
             System.out.println("Enter triangle's name, side A, side B, side C.");
-            String input = Util.getString();
+            String input = ConsoleUtilties.getString();
             try {
                 Triangle triangle = triangleService.getTriangleFromInput(input);
                 triangleList.add(triangle);
             } catch (InputMismatchException exception) {
                 System.out.println(exception.getMessage());
             }
-            shouldContinueTriangleInput = Util.confirmation("Add new triangle? Yes/No");
+            shouldContinueTriangleInput = ConsoleUtilties.confirmation("Add new triangle? Yes/No");
         }
         Collections.sort(triangleList);
         Collections.reverse(triangleList);
