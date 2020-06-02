@@ -17,7 +17,7 @@ public class EnvelopeHandler {
         Envelope firstEnvelope = new Envelope(firstEnvelopeLength, firstEnvelopeWidth);
         Envelope secondEnvelope = new Envelope(secondEnvelopeLength, secondEnvelopeWidth);
         EnvelopeService envelopeService = new EnvelopeService();
-        int result = envelopeService.compareEnvelopes(firstEnvelope,secondEnvelope);
+        int result = envelopeService.place(firstEnvelope,secondEnvelope);
         switch (result){
             case 1:
                 System.out.println("Second envelope can be placed to first.");

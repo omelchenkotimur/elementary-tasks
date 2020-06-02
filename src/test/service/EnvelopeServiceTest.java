@@ -23,8 +23,8 @@ class EnvelopeServiceTest {
         int expectedResult = -1;
         Envelope envelopeFirst = new Envelope(1.0, 1.0);
         Envelope envelopeSecond = new Envelope(2.0, 2.0);
-        int actualResult = envelopeService.compareEnvelopes(envelopeFirst, envelopeSecond);
-        assertEquals("Fail to compareEnvelopes triangles!", expectedResult, actualResult);
+        int actualResult = envelopeService.place(envelopeFirst, envelopeSecond);
+        assertEquals("Fail to place triangles!", expectedResult, actualResult);
     }
 
     @Test
@@ -32,8 +32,8 @@ class EnvelopeServiceTest {
         int expectedResult = 1;
         Envelope envelopeFirst = new Envelope(2.0, 2.0);
         Envelope envelopeSecond = new Envelope(1.0, 1.0);
-        int actualResult = envelopeService.compareEnvelopes(envelopeFirst, envelopeSecond);
-        assertEquals("Fail to compareEnvelopes triangles!", expectedResult, actualResult);
+        int actualResult = envelopeService.place(envelopeFirst, envelopeSecond);
+        assertEquals("Fail to place triangles!", expectedResult, actualResult);
     }
 
     @Test
@@ -41,8 +41,8 @@ class EnvelopeServiceTest {
         int expectedResult = 0;
         Envelope envelopeFirst = new Envelope(1.0, 2.0);
         Envelope envelopeSecond = new Envelope(2.0, 1.0);
-        int actualResult = envelopeService.compareEnvelopes(envelopeFirst, envelopeSecond);
-        assertEquals("Fail to compareEnvelopes triangles!", expectedResult, actualResult);
+        int actualResult = envelopeService.place(envelopeFirst, envelopeSecond);
+        assertEquals("Fail to place triangles!", expectedResult, actualResult);
     }
 
     @AfterAll

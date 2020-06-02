@@ -5,10 +5,18 @@ import com.softserve.model.Envelope;
 /**
  * Service, that contains methods, which uses to work with envelopes.
  */
-public class EnvelopeService implements CompareFiguresToPutOneToAnother {
+public class EnvelopeService implements Placeable {
 
     @Override
-    public int compareEnvelopes(Envelope firstEnvelope, Envelope secondEnvelope) {
+    public int place(Object firstFigure, Object secondFigure) throws IllegalArgumentException {
+        boolean isEnvelopes = firstFigure instanceof Envelope && secondFigure instanceof Envelope;
+        if (!isEnvelopes) {
+            throw new IllegalArgumentException("Input error! You have to place envelopes.");
+        }
+
+        Envelope firstEnvelope = (Envelope) firstFigure;
+        Envelope secondEnvelope = (Envelope) secondFigure;
+
         if ((firstEnvelope.getLength() < secondEnvelope.getLength() &&
                 firstEnvelope.getWidth() < secondEnvelope.getWidth()) ||
                 (firstEnvelope.getLength() < secondEnvelope.getWidth() &&

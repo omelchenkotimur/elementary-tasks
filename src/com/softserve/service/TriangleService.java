@@ -5,7 +5,7 @@ import com.softserve.model.Triangle;
 import java.util.InputMismatchException;
 
 /**
- * Service, that contains methods, which uses to compareEnvelopes triangles & put them into ascending list.
+ * Service, that contains methods, which uses to place triangles & put them into ascending list.
  */
 public class TriangleService {
 

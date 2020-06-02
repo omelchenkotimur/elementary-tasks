@@ -5,7 +5,7 @@ import com.softserve.model.Chessboard;
 /**
  * Service, that contains methods, which uses to work with chessboard.
  */
-public class ChessboardService implements BuildPlayBoard {
+public class ChessboardService implements Buildable {
 
     private Chessboard board;
 
@@ -39,7 +39,7 @@ public class ChessboardService implements BuildPlayBoard {
         return result;
     }
 
-    public Chessboard getChessboard() {
+    private Chessboard getChessboard() {
         return board;
     }
 
