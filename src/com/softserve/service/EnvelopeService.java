@@ -7,6 +7,11 @@ import com.softserve.model.Envelope;
  */
 public class EnvelopeService implements Placeable {
 
+    /**
+     * Method, that uses to place envelopes to each other.
+     *
+     * @return int, that indicates variant of placing.
+     */
     @Override
     public int place(Object firstFigure, Object secondFigure) throws IllegalArgumentException {
         boolean isEnvelopes = firstFigure instanceof Envelope && secondFigure instanceof Envelope;
