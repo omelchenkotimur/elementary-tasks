@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Service, that contains methods, which uses for finding Fibonacci numbers from input range.
+ */
 public class FibonacciNumbersService {
 
     public ArrayList getFibonacciNumbersFromRange(int initialValue, int finalValue) throws IllegalArgumentException {

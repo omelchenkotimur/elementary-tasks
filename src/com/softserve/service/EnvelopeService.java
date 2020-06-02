@@ -2,9 +2,13 @@ package com.softserve.service;
 
 import com.softserve.model.Envelope;
 
-public class EnvelopeService {
+/**
+ * Service, that contains methods, which uses to work with envelopes.
+ */
+public class EnvelopeService implements CompareFiguresToPutOneToAnother {
 
-    public int compare(Envelope firstEnvelope, Envelope secondEnvelope) {
+    @Override
+    public int compareEnvelopes(Envelope firstEnvelope, Envelope secondEnvelope) {
         if ((firstEnvelope.getLength() < secondEnvelope.getLength() &&
                 firstEnvelope.getWidth() < secondEnvelope.getWidth()) ||
                 (firstEnvelope.getLength() < secondEnvelope.getWidth() &&

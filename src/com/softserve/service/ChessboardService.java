@@ -5,7 +5,7 @@ import com.softserve.model.Chessboard;
 /**
  * Service, that contains methods, which uses to work with chessboard.
  */
-public class ChessboardService {
+public class ChessboardService implements BuildPlayBoard {
 
     private Chessboard board;
 
@@ -21,6 +21,7 @@ public class ChessboardService {
      *
      * @return StringBuilder object, that contains built board.
      */
+    @Override
     public StringBuilder build() {
         StringBuilder result = new StringBuilder();
         for (int i = 1; i <= this.getChessboard().getLength(); i++) {

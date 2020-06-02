@@ -3,6 +3,9 @@ package com.softserve.service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Service, that contains methods, which uses to find simple numbers, which square less then input.
+ */
 public class SimpleNumberCountService {
     public List<Integer> simpleNumberCountWhichSquareLessThenInput(int number) throws IllegalArgumentException {
         validateInput(number);

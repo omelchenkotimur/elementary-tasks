@@ -1,5 +1,8 @@
 package com.softserve.service;
 
+/**
+ * Service, that contains methods, which uses to parse number into number in words.
+ */
 public class NumberInWordsService {
 
     public String numberInWords(int number) throws IllegalArgumentException {

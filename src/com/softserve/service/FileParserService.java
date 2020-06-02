@@ -2,6 +2,9 @@ package com.softserve.service;
 
 import com.softserve.util.FileProcessingUtilities;
 
+/**
+ * Service, that contains methods, which uses for parsing files.
+ */
 public class FileParserService {
 
     private String filePath;

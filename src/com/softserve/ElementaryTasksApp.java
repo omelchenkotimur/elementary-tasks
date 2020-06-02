@@ -60,7 +60,7 @@ public class ElementaryTasksApp {
                     boolean shouldContinueEnvelopeTask = true;
                     while (shouldContinueEnvelopeTask) {
                         envelopeHandler.handle();
-                        shouldContinueEnvelopeTask = ConsoleUtilties.confirmation("Continue to compare envelopes? Yes/No");
+                        shouldContinueEnvelopeTask = ConsoleUtilties.confirmation("Continue to compareEnvelopes envelopes? Yes/No");
                     }
                     break;
                 case 3:
@@ -69,7 +69,7 @@ public class ElementaryTasksApp {
                     boolean shouldContinueTriangleTask = true;
                     while (shouldContinueTriangleTask) {
                         triangleHandler.handle();
-                        shouldContinueTriangleTask = ConsoleUtilties.confirmation("Continue to compare triangles? Yes/No");
+                        shouldContinueTriangleTask = ConsoleUtilties.confirmation("Continue to compareEnvelopes triangles? Yes/No");
                     }
                     break;
                 case 4:

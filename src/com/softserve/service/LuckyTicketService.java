@@ -1,5 +1,8 @@
 package com.softserve.service;
 
+/**
+ * Service, that contains methods, which uses to count lucky tickets.
+ */
 public class LuckyTicketService {
 
     private static final String MOSCOW_TYPE = "moscow";

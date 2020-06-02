@@ -1,5 +1,8 @@
 package com.softserve.service;
 
+/**
+ * Service, that contains methods, which uses for binary exponention.
+ */
 public class FastExponentiationService {
     public long binaryPower(int number, int power) throws IllegalArgumentException {
         validateInputValues(number, power);
