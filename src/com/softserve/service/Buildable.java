@@ -5,5 +5,5 @@ package com.softserve.service;
  * with given width and length.
  */
 public interface Buildable {
-    StringBuilder build();
+    String build();
 }

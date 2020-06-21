@@ -9,7 +9,13 @@ import java.util.InputMismatchException;
  */
 public class TriangleService {
 
-    public Triangle getTriangleFromInput(String value) throws InputMismatchException {
+    /**
+     * Method, that uses to build triangle
+     * from input & calculate its square.
+     *
+     * @return triangle with square value.
+     */
+    public Triangle buildTriangleFromString(String value) throws InputMismatchException {
         String[] splitted = value.split(",");
         if (splitted.length != 4) {
             throw new InputMismatchException("Incorrect input.");

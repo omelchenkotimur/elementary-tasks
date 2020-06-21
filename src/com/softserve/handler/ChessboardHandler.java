@@ -1,7 +1,7 @@
 package com.softserve.handler;
 
 import com.softserve.model.Chessboard;
-import com.softserve.service.ChessboardService;
+import com.softserve.service.ChessboardBuilder;
 import com.softserve.util.ConsoleUtilties;
 
 public class ChessboardHandler {
@@ -15,9 +15,9 @@ public class ChessboardHandler {
         System.out.println("Enter cell:");
         String cell = ConsoleUtilties.getOneCharString();
         Chessboard chessboard = new Chessboard(length, width, cell);
-        ChessboardService chessboardService = new ChessboardService(chessboard);
+        ChessboardBuilder chessboardBuilder = new ChessboardBuilder(chessboard);
         System.out.println("Your chessboard is:");
-        System.out.println(chessboardService.build());
+        System.out.println(chessboardBuilder.build());
 
     }
 }

@@ -5,14 +5,14 @@ import com.softserve.model.Chessboard;
 /**
  * Service, that contains methods, which uses to work with chessboard.
  */
-public class ChessboardService implements Buildable {
+public class ChessboardBuilder implements Buildable {
 
     private Chessboard board;
 
-    public ChessboardService() {
+    public ChessboardBuilder() {
     }
 
-    public ChessboardService(Chessboard chessboard) {
+    public ChessboardBuilder(Chessboard chessboard) {
         this.board = chessboard;
     }
 
@@ -22,7 +22,7 @@ public class ChessboardService implements Buildable {
      * @return StringBuilder object, that contains built board.
      */
     @Override
-    public StringBuilder build() {
+    public String build() {
         StringBuilder result = new StringBuilder();
         for (int i = 1; i <= this.getChessboard().getLength(); i++) {
             for (int j = 1; j <= this.getChessboard().getWidth(); j++) {
@@ -36,7 +36,7 @@ public class ChessboardService implements Buildable {
                 result.append('\n');
             }
         }
-        return result;
+        return String.valueOf(result);
     }
 
     private Chessboard getChessboard() {

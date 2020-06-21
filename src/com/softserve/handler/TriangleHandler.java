@@ -20,7 +20,7 @@ public class TriangleHandler {
             System.out.println("Enter triangle's name, side A, side B, side C.");
             String input = ConsoleUtilties.getString();
             try {
-                Triangle triangle = triangleService.getTriangleFromInput(input);
+                Triangle triangle = triangleService.buildTriangleFromString(input);
                 triangleList.add(triangle);
             } catch (InputMismatchException exception) {
                 System.out.println(exception.getMessage());

@@ -24,20 +24,20 @@ class TriangleServiceTest {
     @Test
     void testGetTriangleFromInput() {
         Triangle expectedTriangle = new Triangle("testTriangle", 2, 2, 2);
-        Triangle actualTriangle = triangleService.getTriangleFromInput("testTriangle, 2, 2, 2");
+        Triangle actualTriangle = triangleService.buildTriangleFromString("testTriangle, 2, 2, 2");
         assertEquals("Fail to get Triangle", expectedTriangle, actualTriangle);
     }
 
     @Test
     void testGetTriangleFromInputExpectedIncorrectInput() {
         Assertions.assertThrows(InputMismatchException.class, () ->
-                triangleService.getTriangleFromInput("testTriangle, 2, 2, 2, 2"));
+                triangleService.buildTriangleFromString("testTriangle, 2, 2, 2, 2"));
     }
 
     @Test
     void testGetTriangleFromInputExpectedSidesMismatch() {
         Assertions.assertThrows(InputMismatchException.class, () ->
-                triangleService.getTriangleFromInput("testTriangle, 2, 2, 20"));
+                triangleService.buildTriangleFromString("testTriangle, 2, 2, 20"));
     }
 
 
